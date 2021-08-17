@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto:400,400i,500,500i,700,700i,900,900i"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>FCC: Technical Documentation Page</title>
+  </head>
+  <body>
+    <main>
+      <div class="sidenav">
+        <p>Table of Contents</p>
+        <a href="#install">Installing Python Modules</a>
+        <a href="#key-terms">- Key terms</a>
+      </div>
+
+      <section class="main">
+        <h1 id="install">Installing Python Modules</h1>
+        <p>
+          Email:
+          <a href="mailto:distutils-sig@python.org">distutils-sig@python.org</a>
+        </p>
+        <p>
+          As a popular open source development project, Python has an active
+          supporting community of contributors and users that also make their
+          software available for other Python developers to use under open
+          source license terms.
+        </p>
+        <p>
+          This allows Python users to share and collaborate effectively,
+          benefiting from the solutions others have already created to common
+          (and sometimes even rare!) problems, as well as potentially
+          contributing their own solutions to the common pool.
+        </p>
+        <p>
+          This guide covers the installation part of the process. For a guide to
+          creating and sharing your own Python projects, refer to the
+          <a href="#">distribution guide.</a>
+        </p>
+        <p id="gray-highlight-box">
+          <strong>Note:</strong> For corporate and other institutional users, be
+          aware that many organisations have their own policies around using and
+          contributing to open source software. Please take such policies into
+          account when making use of the distribution and installation tools
+          provided with Python.
+        </p>
+        <article>
+          <h2 id="key-terms">Key terms</h2>
+          <ul>
+            <li>
+              <span>pip</span> is the preferred installer program. Starting with
+              Python 3.4, it is included by default with the Python binary
+              installers.
+            </li>
+            <li>
+              A <i>virtual environment</i> is a semi-isolated Python environment
+              that allows packages to be installed for use by a particular
+              application, rather than being installed system wide.
+            </li>
+            <li>
+              <span>venv</span> is the standard tool for creating virtual
+              environments, and has been part of Python since Python 3.3.
+              Starting with Python 3.4, it defaults to installing
+              <span>pip</span> into all created virtual environments.
+            </li>
+            <li>
+              <span>virtualenv</span> is a third party alternative (and
+              predecessor) to <span>venv</span>. It allows virtual environments
+              to be used on versions of Python prior to 3.4, which either don’t
+              provide <span>venv</span> at all, or aren’t able to automatically
+              install <span>pip</span>
+              into created environments.
+            </li>
+            <li>
+              The <a href="#">Python Packaging Index</a> is a public repository
+              of open source licensed packages made available for use by other
+              Python users.
+            </li>
+            <li>
+              The <a href="#">Python Packaging Authority</a> is the group of
+              developers and documentation authors responsible for the
+              maintenance and evolution of the standard packaging tools and the
+              associated metadata and file format standards. They maintain a
+              variety of tools, documentation, and issue trackers on both
+              <a href="github.com">GitHub</a> and
+              <a href="bitbucket.com">Bitbucket</a>.
+            </li>
+            <li>
+              <span>distutils</span> is the original build and distribution
+              system first added to the Python standard library in 1998. While
+              direct use of <span>distutils</span> is being phased out, it still
+              laid the foundation for the current packaging and distribution
+              infrastructure, and it not only remains part of the standard
+              library, but its name lives on in other ways (such as the name of
+              the mailing list used to coordinate Python packaging standards
+              development).
+            </li>
+          </ul>
+          <p>
+            <i>Changed in version 3.5:</i> The use of venv is now recommended
+            for creating virtual environments.
+          </p>
+          <p id="yellow-highlight-box">
+            <strong>See also:</strong>
+            <a href="#"
+              >Python Packaging User Guide: Creating and using virtual
+              environments</a
+            >
+          </p>
+        </article>
+      </section>
+
+      <a href="https://docs.python.org/3/installing/index.html#basic-usage"
+        >source</a
+      >
+    </main>
+  </body>
+</html>
