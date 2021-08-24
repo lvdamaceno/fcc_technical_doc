@@ -6,19 +6,88 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link
+      href="https://fonts.google.com/specimen/Roboto+Mono?category=Monospace"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>FCC: Technical Documentation Page</title>
   </head>
   <body>
+    <header class="container">
+      <div class="menu">
+        <ul>
+          <img src="https://www.python.org/static/opengraph-icon-200x200.png" />
+          <a href="#">Python</a>
+          >>
+          <select name="language" id="language">
+            <option value="en">English</option>
+            <option value="pt">Portuguese</option>
+            <option value="jp">Japanese</option>
+            <option value="ch">Chinese</option>
+          </select>
+          <select name="version" id="version">
+            <option value="en">3.9.6</option>
+          </select>
+          <a href="#">Documentation</a>
+          >>
+        </ul>
+      </div>
+      <div class="menu">
+        <ul>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Quick search"
+          />
+          <button type="button" onclick="">Go</button>
+          <a href="#">Previous</a>
+          |
+          <a href="#">Next</a>
+          |
+          <a href="#">Modules</a>
+          |
+          <a href="#">Index</a>
+        </ul>
+      </div>
+    </header>
     <main>
       <div class="sidenav">
         <p>Table of Contents</p>
         <a href="#install">Installing Python Modules</a>
-        <a href="#key-terms">- Key terms</a>
+        <a href="#key-terms">&#9632; Key terms</a>
+        <a href="#basic-usage">&#9632; Basic Usage</a>
+        <a href="#how-do-i-do">&#9632; How do I...?</a>
+        <a href="#install-prior" id="tab"
+          >&#9632; … install pip in versions of Python prior to Python 3.4?</a
+        >
+        <a href="#install-current" id="tab"
+          >&#9632; … install packages just for the current user?</a
+        >
+        <a href="#install-scientific" id="tab"
+          >&#9632; … install scientific Python packages?</a
+        >
+        <a href="#multiple-versions" id="tab"
+          >&#9632; … work with multiple versions of Python installed in
+          parallel?</a
+        >
+        <a href="#common-issues">&#9632; Common installation issues</a>
+        <a href="#install-linux" id="tab"
+          >&#9632; Installing into the system Python on Linux</a
+        >
+        <a href="#pip-not-install" id="tab">&#9632; Pip not installed</a>
+        <a href="#installing-ext" id="tab"
+          >&#9632; Installing binary extensions</a
+        >
       </div>
 
-      <section class="main">
+      <section class="content">
         <h1 id="install">Installing Python Modules</h1>
+        <a href="https://docs.python.org/3/installing/index.html#basic-usage"
+          >source</a
+        >
         <p>
           Email:
           <a href="mailto:distutils-sig@python.org">distutils-sig@python.org</a>
@@ -47,8 +116,9 @@
           account when making use of the distribution and installation tools
           provided with Python.
         </p>
-        <article>
-          <h2 id="key-terms">Key terms</h2>
+
+        <article id="key-terms">
+          <h2>Key terms</h2>
           <ul>
             <li>
               <span>pip</span> is the preferred installer program. Starting with
@@ -111,11 +181,218 @@
             >
           </p>
         </article>
-      </section>
 
-      <a href="https://docs.python.org/3/installing/index.html#basic-usage"
-        >source</a
-      >
+        <article id="basic-usage">
+          <h2>Basic Usage</h2>
+          <p>
+            The standard packaging tools are all designed to be used from the
+            command line.
+          </p>
+          <p>
+            The following command will install the latest version of a module
+            and its dependencies from the Python Packaging Index:
+          </p>
+          <p id="green-highlight-box">python -m pip install SomePackage</p>
+          <p id="gray-highlight-box">
+            <strong>Note:</strong> For POSIX users (including Mac OS X and Linux
+            users), the examples in this guide assume the use of a
+            <a href="#">virtual environment</a>. <br /><br />
+            For Windows users, the examples in this guide assume that the option
+            to adjust the system PATH environment variable was selected when
+            installing Python.
+          </p>
+          <p>
+            It’s also possible to specify an exact or minimum version directly
+            on the command line. When using comparator operators such as
+            <span>></span>, <span><</span> or some other special character which
+            get interpreted by shell, the package name and the version should be
+            enclosed within double quotes:
+          </p>
+          <p id="green-highlight-box">
+            python -m pip install SomePackage==1.0.4 # specific version <br />
+            python -m pip install "SomePackage>=1.0.4" # minimum version
+          </p>
+          <p>
+            More information and resources regarding pip and its capabilities
+            can be found in the <a href="#">Python Packaging User Guide</a>.
+          </p>
+          <p>
+            Creation of virtual environments is done through the
+            <a href="#">venv</a> module. Installing packages into an active
+            virtual environment uses the commands shown above.
+          </p>
+          <p id="yellow-highlight-box">
+            See also:
+            <a href="#"
+              >Python Packaging User Guide: Installing Python Distribution
+              Packages</a
+            >
+          </p>
+        </article>
+
+        <article id="how-do-i-do">
+          <h2>How do I …?</h2>
+          <p>These are quick answers or links for some common tasks.</p>
+          <h3 id="install-prior">
+            … install pip in versions of Python prior to Python 3.4?
+          </h3>
+          <p>
+            Python only started bundling <span>pip</span> with Python 3.4. For
+            earlier versions, <span>pip</span> needs to be “bootstrapped” as
+            described in the Python Packaging User Guide.
+          </p>
+          <p id="yellow-highlight-box">
+            See also:
+            <a href="#"
+              >Python Packaging User Guide: Requirements for Installing
+              Packages</a
+            >
+          </p>
+          <h3 id="install-current">
+            … install packages just for the current user?
+          </h3>
+          <p>
+            Passing the <span>--user</span> option to
+            <span>python -m pip install</span> will install a package just for
+            the current user, rather than for all users of the system.
+          </p>
+          <h3 id="install-scientific">… install scientific Python packages?</h3>
+          <p>
+            A number of scientific Python packages have complex binary
+            dependencies, and aren’t currently easy to install using
+            <span>pip</span> directly. At this point in time, it will often be
+            easier for users to install these packages by
+            <a href="#">other means</a> rather than attempting to install them
+            with <span>pip</span>.
+          </p>
+          <p id="yellow-highlight-box">
+            See also:
+            <a href="#"
+              >Python Packaging User Guide: Installing Scientific Packages</a
+            >
+          </p>
+          <h3 id="multiple-versions">
+            … work with multiple versions of Python installed in parallel?
+          </h3>
+          <p>
+            On Linux, Mac OS X, and other POSIX systems, use the versioned
+            Python commands in combination with the <span>-m</span> switch to
+            run the appropriate copy of <span>pip</span>:
+          </p>
+          <p id="green-highlight-box">
+            python2 &nbsp; -m pip install SomePackage # default Python 2
+            <br />
+            python2.7 -m pip install SomePackage # specifically Python 2.7
+            <br />
+            python3 &nbsp; -m pip install SomePackage # default Python 3 <br />
+            python3.4 -m pip install SomePackage # specifically Python 3.4
+          </p>
+          <p>
+            Appropriately versioned <span>pip</span> commands may also be
+            available.
+          </p>
+          <p>
+            On Windows, use the <span>py</span> Python launcher in combination
+            with the <span>-m</span> switch:
+          </p>
+          <p id="green-highlight-box">
+            py -2 &nbsp; -m pip install SomePackage # default Python 2 <br />
+            py -2.7 -m pip install SomePackage # specifically Python 2.7 <br />
+            py -3 &nbsp; -m pip install SomePackage # default Python 3 <br />
+            py -3.4 -m pip install SomePackage # specifically Python 3.4
+          </p>
+        </article>
+
+        <article id="common-issues">
+          <h2>Common installation issue</h2>
+          <h3>Installing into the system Python on Linux</h3>
+          <p>
+            On Linux systems, a Python installation will typically be included
+            as part of the distribution. Installing into this Python
+            installation requires root access to the system, and may interfere
+            with the operation of the system package manager and other
+            components of the system if a component is unexpectedly upgraded
+            using <span>pip</span>.
+          </p>
+          <p>
+            On such systems, it is often better to use a virtual environment or
+            a per-user installation when installing packages with
+            <span>pip</span>.
+          </p>
+          <h3>Pip not installed</h3>
+          <p>
+            It is possible that <span>pip</span> does not get installed by
+            default. One potential fix is:
+          </p>
+          <p id="green-highlight-box">python -m ensurepip --default-pip</p>
+          <p>
+            There are also additional resources for
+            <a href="#">installing pip</a>.
+          </p>
+          <h3>Installing binary extensions</h3>
+          <p>
+            Python has typically relied heavily on source based distribution,
+            with end users being expected to compile extension modules from
+            source as part of the installation process.
+          </p>
+          <p>
+            With the introduction of support for the binary
+            <span>wheel</span> format, and the ability to publish wheels for at
+            least Windows and Mac OS X through the Python Packaging Index, this
+            problem is expected to diminish over time, as users are more
+            regularly able to install pre-built extensions rather than needing
+            to build them themselves.
+          </p>
+          <p>
+            Some of the solutions for installing
+            <a href="#">scientific software</a> that are not yet available as
+            pre-built <span>wheel</span> files may also help with obtaining
+            other binary extensions without needing to build them locally.
+          </p>
+          <p id="yellow-highlight-box">
+            See also:
+            <a href="#">Python Packaging User Guide: Binary Extensions</a>
+          </p>
+        </article>
+      </section>
     </main>
+    <footer class="container-footer">
+      <div class="menu">
+        <ul>
+          <img src="https://www.python.org/static/opengraph-icon-200x200.png" />
+          <a href="#">Python</a>
+          >>
+          <select name="language" id="language">
+            <option value="en">English</option>
+            <option value="pt">Portuguese</option>
+            <option value="jp">Japanese</option>
+            <option value="ch">Chinese</option>
+          </select>
+          <select name="version" id="version">
+            <option value="en">3.9.6</option>
+          </select>
+          <a href="#">Documentation</a>
+          >>
+        </ul>
+      </div>
+      <div class="menu">
+        <ul>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Quick search"
+          />
+          <button type="button" onclick="">Go</button>
+          <a href="#">Previous</a>
+          |
+          <a href="#">Next</a>
+          |
+          <a href="#">Modules</a>
+          |
+          <a href="#">Index</a>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
